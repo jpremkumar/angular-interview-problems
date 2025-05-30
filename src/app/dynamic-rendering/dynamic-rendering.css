@@ -1,0 +1,30 @@
+.actions {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.dynamic-container-wrapper {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px dashed #007bff; /* Blue dashed border */
+  border-radius: 5px;
+  background-color: #f0f8ff; /* Light alice blue background */
+}
+
+.dynamic-container-wrapper h4 {
+  margin-top: 0;
+  color: #0056b3; /* Darker blue for the heading */
+}
+
+.dynamic-component-host {
+  padding: 10px;
+  border: 1px solid #ccc;
+  min-height: 50px;
+  background-color: #fff;
+}
+
+.dynamic-component-host p {
+  color: #777;
+  font-style: italic;
+}

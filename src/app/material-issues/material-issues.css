@@ -1,0 +1,71 @@
+/* Styles for MaterialIssuesComponent */
+
+/*
+  Issue 1: Style Encapsulation & Overriding Material Styles
+  NOTE: ViewEncapsulation.None is used on the component for this demo.
+  This makes these styles effectively global for this component's template.
+  In real apps, use ::ng-deep with caution or prefer Material Theming APIs.
+*/
+.example-styling {
+  padding: 15px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Customizing mat-button ripple color */
+.custom-ripple-button .mat-ripple-element {
+  background-color: rgba(255, 0, 0, 0.5) !important; /* Red ripple */
+}
+
+/* Customizing mat-select panel background */
+.custom-select-panel {
+  background-color: lightyellow !important;
+  border: 1px solid orange !important;
+}
+
+.custom-select-panel .mat-option.mat-selected {
+  background-color: #fff3cd !important; /* Lighter yellow for selected */
+  color: darkorange !important;
+}
+
+/* Customizing mat-tooltip */
+.custom-tooltip {
+  background-color: black !important;
+  color: limegreen !important;
+  font-size: 1.1em !important;
+  border: 1px solid limegreen !important;
+}
+
+
+/* Issue 2: Reactive Forms with Material Components */
+.material-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.material-form mat-form-field {
+  width: 100%;
+}
+
+/* Add some spacing for the submit button */
+.material-form button[type="submit"] {
+  margin-top: 10px;
+  align-self: flex-start; /* Align button to the left */
+}
+
+/* General hr styling */
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+}

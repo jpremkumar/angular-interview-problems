@@ -1,0 +1,44 @@
+.responsive-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Space between cards */
+  margin-top: 20px;
+}
+
+.responsive-item {
+  /* Default for small screens: 1 item per row */
+  flex: 1 1 100%;
+  box-sizing: border-box;
+}
+
+.item-card {
+  height: 100%; /* Make cards in the same row equal height if content varies */
+}
+
+/* Medium screens (e.g., tablets) - 2 items per row */
+@media (min-width: 600px) {
+  .responsive-item {
+    flex: 1 1 calc(50% - 8px); /* 50% width minus half the gap */
+  }
+}
+
+/* Large screens (e.g., desktops) - 3 items per row */
+@media (min-width: 960px) {
+  .responsive-item {
+     /* Aim for 3 items: 33.333% width minus portion of the gap for 3 items */
+     flex: 1 1 calc(33.333% - 11px); /* (16px gap * 2/3) is approx 10.67, rounded to 11px */
+  }
+}
+
+/* If you wanted a strict 4 column layout on very large screens */
+@media (min-width: 1280px) {
+  .responsive-item {
+    /* 25% width minus portion of the gap for 4 items (16px gap * 3/4) */
+    flex: 1 1 calc(25% - 12px);
+  }
+}
+
+/* Ensure mat-card content is also responsive if needed */
+.item-card mat-card-content p {
+  word-break: break-word; /* Prevent long words from breaking layout */
+}

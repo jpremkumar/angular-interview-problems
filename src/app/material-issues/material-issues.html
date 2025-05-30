@@ -1,0 +1,101 @@
+<p>material-issues works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Angular Material: Common Issues & Customization</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      This section highlights some common challenges and customization techniques when working with Angular Material.
+    </p>
+
+    <hr>
+    <h4>Issue 1: Style Encapsulation & Overriding Material Styles</h4>
+    <p>
+      Angular Material components have their own encapsulated styles. Sometimes, overriding these default styles requires specific approaches.
+      For example, changing the background color of a <code>mat-select</code> panel or the color of the ripple effect on a <code>mat-button</code>.
+    </p>
+    <div class="example-styling">
+      <button mat-raised-button color="primary" class="custom-ripple-button" matTooltip="{{tooltipText}}" matTooltipClass="custom-tooltip">
+        Button with Custom Ripple & Tooltip
+      </button>
+      <mat-form-field appearance="fill" class="custom-select-container">
+        <mat-label>Select an option (custom panel)</mat-label>
+        <mat-select panelClass="custom-select-panel">
+          <mat-option value="option1">Option 1</mat-option>
+          <mat-option value="option2">Option 2</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <p><small>
+      (Note: For this demo, <code>ViewEncapsulation.None</code> is used on this component for simplicity in CSS overrides.
+      In real applications, prefer using <code>::ng-deep</code> (sparingly and with caution), Material Theming APIs, or CSS custom properties if the component supports them.)
+    </small></p>
+
+    <hr>
+    <h4>Issue 2: Reactive Forms with Material Components & Custom Validation</h4>
+    <p>
+      Integrating Angular Material form controls with Angular's Reactive Forms, including custom validators and error messages.
+    </p>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="material-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter your name">
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error *ngIf="name?.hasError('required')">Name is required.</mat-error>
+        <mat-error *ngIf="name?.hasError('minlength')">Name must be at least 3 characters long.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter your email">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="email?.hasError('required')">Email is required.</mat-error>
+        <mat-error *ngIf="email?.hasError('email')">Please enter a valid email address.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Favorite Framework</mat-label>
+        <mat-select formControlName="framework">
+          <mat-option *ngFor="let fw of frameworks" [value]="fw.value">
+            {{fw.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="framework?.hasError('required')">Please select a framework.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Years of Experience</mat-label>
+        <input matInput type="number" formControlName="experience" placeholder="Years with the framework">
+        <mat-icon matSuffix>star_rate</mat-icon>
+        <mat-error *ngIf="experience?.hasError('required')">Experience is required.</mat-error>
+        <mat-error *ngIf="experience?.hasError('min')">Experience must be at least 1 year.</mat-error>
+        <mat-error *ngIf="experience?.hasError('max')">Experience cannot exceed 20 years.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Project Description (must include "Angular")</mat-label>
+        <textarea matInput formControlName="projectDescription" placeholder="Describe a project, ensure you mention 'Angular'"></textarea>
+        <mat-error *ngIf="projectDescription?.hasError('required')">Project description is required.</mat-error>
+        <mat-error *ngIf="projectDescription?.hasError('containsAngular')">{{ projectDescription?.errors?.['containsAngular'] }}</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Submit</button>
+    </form>
+
+    <hr>
+    <h4>Interview Questions:</h4>
+    <ol>
+      <li>When trying to style an Angular Material component, why might your CSS rules in the component's stylesheet not apply as expected? Explain View Encapsulation.</li>
+      <li>What are different strategies to override or customize the styles of Angular Material components? Discuss the pros and cons of each (e.g., <code>::ng-deep</code>, global stylesheets, Material Theming, CSS custom properties, <code>ViewEncapsulation.None</code>). When customizing components rendered in an overlay (like dialogs or select panels), what special considerations are there regarding the <code>OverlayContainer</code>?</li>
+      <li>How do you integrate Angular Material form components (like <code>mat-input</code>, <code>mat-select</code>) with Reactive Forms? Show a basic setup.</li>
+      <li>Explain how to display validation error messages for a Material form field. How can you show different messages for different errors on the same field?</li>
+      <li>How would you implement a custom validator in a Reactive Form? When creating a custom validator, how do you provide an error object, and how is that error object typically used in the template to display a message?</li>
+      <li>What is the purpose of <code>matSuffix</code> and <code>matPrefix</code> directives in <code>mat-form-field</code>?</li>
+      <li>How can you customize the appearance of a <code>mat-tooltip</code> (e.g., using <code>matTooltipClass</code>)?</li>
+      <li>If a Material component doesn't directly expose a CSS custom property for a style you want to change, and <code>::ng-deep</code> feels too broad, what other approaches might you consider for a very targeted override?</li>
+      <li>Discuss the importance of accessibility (a11y) when using and customizing Material components. What features does Angular Material provide to help with a11y?</li>
+      <li>Briefly explain the core concepts of Angular Material's theming system. How would you define a custom theme with primary, accent, and warn palettes?</li>
+      <li>Beyond styling and forms, what are some other useful utilities or components provided by the Angular CDK (Component Dev Kit) that often complement Angular Material? (e.g., Drag and Drop, Scrolling, Portals, Observers).</li>
+    </ol>
+  </mat-card-content>
+</mat-card>

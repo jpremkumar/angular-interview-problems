@@ -1,0 +1,76 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Responsive Design Techniques</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      This section demonstrates basic responsive design. The layout of the cards below will change based on the screen width.
+    </p>
+    <ul>
+      <li><strong>Large screens (>= 960px):</strong> Cards are displayed in a row (3 per row).</li>
+      <li><strong>Medium screens (>= 600px and < 960px):</strong> Cards are displayed in a row (2 per row).</li>
+      <li><strong>Small screens (< 600px):</strong> Cards are stacked vertically (1 per row).</li>
+    </ul>
+    <p>
+      Resize your browser window to see the changes.
+    </p>
+
+    <div class="responsive-container">
+      <div class="responsive-item">
+        <mat-card class="item-card">
+          <mat-card-header>
+            <mat-card-title>Card 1</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>This is the first item. It contains some sample content.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="responsive-item">
+        <mat-card class="item-card">
+          <mat-card-header>
+            <mat-card-title>Card 2</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Second item here. It also has some interesting text.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="responsive-item">
+        <mat-card class="item-card">
+          <mat-card-header>
+            <mat-card-title>Card 3</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>The third item is just as important as the others.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="responsive-item">
+        <mat-card class="item-card">
+          <mat-card-header>
+            <mat-card-title>Card 4</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>And finally, the fourth item to complete the set.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <h4>Problem Statement / Interview Scenario:</h4>
+    <p>
+      An application page displays a series of product information cards. On desktop, these cards should appear in a grid-like fashion (e.g., 3 or 4 cards per row). On tablets, fewer cards should appear per row (e.g., 2 per row). On mobile phones, the cards should stack vertically, each taking the full width available. The content within the cards (text, images) should also adjust gracefully.
+    </p>
+    <ol>
+      <li>What are the primary CSS techniques you would use to achieve this responsive layout (e.g., Flexbox, Grid, Media Queries)? Compare and contrast CSS Grid and Flexbox for this specific card layout scenario. When might you choose one over the other, or use them together?</li>
+      <li>How would you define breakpoints for different screen sizes? What factors influence this decision? What does "mobile-first" development mean in this context, and what are its advantages?</li>
+      <li>Describe how you would ensure images within the cards are responsive (e.g., using <code>max-width: 100%;</code>, <code>&lt;picture&gt;</code> element, <code>srcset</code> attribute).</li>
+      <li>If you needed to change component behavior or load different content based on screen size (not just styling), what Angular-specific tools could you use? Explain how the <code>BreakpointObserver</code> service from the Angular CDK LayoutModule works and how you might use it.</li>
+      <li>What are some common pitfalls or challenges when implementing responsive designs, such as dealing with navigation, complex tables, or large forms on small screens?</li>
+      <li>How would you test the responsiveness of your application across different devices and screen sizes (e.g., browser dev tools, emulators, real devices)?</li>
+      <li>Explain the difference between "adaptive" and "responsive" design. Which approach is primarily demonstrated in this example?</li>
+      <li>How can CSS Custom Properties (variables) be utilized to make responsive designs more maintainable, especially for themeable values (e.g., font sizes, spacing) that might change across breakpoints?</li>
+    </ol>
+  </mat-card-content>
+</mat-card>

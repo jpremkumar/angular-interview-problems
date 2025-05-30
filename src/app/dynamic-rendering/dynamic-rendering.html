@@ -1,0 +1,47 @@
+<p>dynamic-rendering works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Dynamic Component Rendering</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      This section demonstrates how to dynamically load and render a component at runtime using <code>ViewContainerRef</code>.
+      This is useful for scenarios where the exact component to be rendered is not known at compile time, or when you want to
+      defer loading of certain components until they are needed.
+    </p>
+    <p>
+      Click the button below to load <code>DynamicallyLoadedComponent</code> into the designated area.
+      You can also pass data to it and listen to its events.
+    </p>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="loadDynamicComponent()">Load Dynamic Component</button>
+      <button mat-raised-button color="warn" (click)="clearDynamicComponent()">Clear Dynamic Component</button>
+    </div>
+
+    <div class="dynamic-container-wrapper">
+      <h4>Dynamic Component Container:</h4>
+      <div #dynamicComponentContainer class="dynamic-component-host">
+        <!-- The DynamicallyLoadedComponent will be inserted here -->
+        <p *ngIf="!dynamicComponentContainer.length">Container is empty. Click "Load" to add the component.</p>
+      </div>
+    </div>
+
+    <h4>Problem Statement / Interview Scenario:</h4>
+    <p>
+      Imagine you are building a dashboard where users can add different types of widgets (e.g., a chart widget, a news feed widget, a weather widget).
+      The specific widgets to display are determined by user configuration or some other runtime condition.
+      You need to load and render these widget components dynamically into placeholder locations on the dashboard.
+    </p>
+    <ol>
+      <li>Describe the roles of <code>ViewContainerRef</code> and the <code>createComponent</code> method in dynamic component loading. How and where do you typically obtain a <code>ViewContainerRef</code>?</li>
+      <li>How do you pass input data to a dynamically created component, and how can you listen to its output events?</li>
+      <li>Why is it important to manage the lifecycle of dynamically created components (e.g., destroying them when no longer needed)? How do you properly clean them up?</li>
+      <li>Explain the concept of <code>entryComponents</code> in pre-Ivy Angular. How has Ivy simplified the process of dynamic component loading, and in what scenarios might you still need to ensure a component is explicitly known to the compiler for dynamic loading?</li>
+      <li>Are there any alternatives to <code>ViewContainerRef.createComponent</code> for dynamic rendering (e.g., <code>*ngComponentOutlet</code>)? What are their respective use cases and limitations?</li>
+      <li>Consider a scenario where the dynamically loaded component itself has dependencies (services). How does Angular's dependency injection work for these components? Does it matter if the service is provided in the root, a parent module, or the dynamically loaded component's own module (if it has one)?</li>
+      <li>If you need to dynamically load one of several possible components based on a type property (e.g., a string identifier received from an API), how would you typically map this type to the actual component class to be loaded?</li>
+      <li>What considerations would you have for lazy loading the Angular module that declares a component you intend to load dynamically? How would this differ from just dynamically instantiating a component that's already part of an eagerly loaded module?</li>
+    </ol>
+  </mat-card-content>
+</mat-card>

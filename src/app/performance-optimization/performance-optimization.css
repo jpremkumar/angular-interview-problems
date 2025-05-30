@@ -1,0 +1,33 @@
+.list-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.list-section {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.list-section h3 {
+  margin-top: 0;
+}
+
+.actions {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hidden {
+  display: none;
+}
+
+mat-list-item {
+  font-size: 0.9em;
+  border-bottom: 1px solid #eee;
+}

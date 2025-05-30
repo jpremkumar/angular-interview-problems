@@ -1,0 +1,38 @@
+<p>lazy-loading-demo works!</p>
+<p>
+  This component is part of a lazy-loaded module!
+</p>
+<p>
+  If you can see this, it means the <code>LazyLoadingDemoModule</code> and its components
+  were loaded on demand when you navigated to the '/lazy' route.
+</p>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Lazy Loading Concepts</mat-card-title>
+  </mat-card-header>
+  <div>
+    <p>
+      This component (<code>LazyLoadingDemoComponent</code>) and its module (<code>LazyLoadingDemoModule</code>) are lazy-loaded.
+      This means their code is only downloaded and parsed by the browser when you navigate to the '/lazy' route.
+    </p>
+    <p>
+      Observe your browser's network tab when you first load the application and then navigate to this "Lazy Loading" tab.
+      You should see a new JavaScript chunk being loaded for this module.
+    </p>
+
+    <h4>Interview Questions: Lazy Loading</h4>
+    <ol>
+      <li>What is lazy loading in the context of an Angular application, and why is it a crucial performance optimization technique?</li>
+      <li>How do you configure a route for lazy loading a feature module in Angular's routing setup? Provide the typical syntax used in <code>AppRoutingModule</code>.</li>
+      <li>What are the key differences and typical use cases for a shared module, a feature module, and a core module in an Angular application structure? Which of these types is most commonly lazy-loaded?</li>
+      <li>If a lazy-loaded module requires its own set of services, where is the best place to provide those services to ensure they are also effectively lazy-loaded and scoped correctly (i.e., a unique instance for that lazy-loaded part of the app if needed)? What happens if a service is provided both in a lazy-loaded module and at the root level (e.g., via <code>providedIn: 'root'</code> or in <code>AppModule</code>)?</li>
+      <li>With the evolution of Angular (e.g., Angular 17+), can you lazy load standalone components directly without an NgModule? If so, how does the routing configuration differ from lazy loading a module?</li>
+      <li>How can you verify that a module or component is indeed being lazy-loaded as expected? (Mention specific browser developer tools or techniques).</li>
+      <li>What are preloading strategies in Angular routing (e.g., <code>PreloadAllModules</code>, custom preloading strategies)? When and why might you use them in conjunction with lazy loading?</li>
+      <li>Consider a scenario where a lazy-loaded feature module needs to use components, directives, or pipes from a shared UI library module (e.g., a module that exports common Material components). How do you make these shared elements available to your lazy-loaded module efficiently, without bloating the main application bundle?</li>
+      <li>What are some potential challenges, pitfalls, or things to be cautious about when implementing lazy loading in a large application? (e.g., managing dependencies, shared services, user experience during load).</li>
+      <li>How does lazy loading affect the initial bundle size and the Time to Interactive (TTI) of an Angular application?</li>
+    </ol>
+</div>
+</mat-card>

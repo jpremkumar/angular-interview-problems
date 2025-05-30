@@ -1,0 +1,199 @@
+<div class="rxjs-examples-container">
+  <h1>RxJS Operators and Concepts Showcase</h1>
+
+  <!-- Simple Operators -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Simple Operators</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <section>
+        <h2><code>of()</code></h2>
+        <p>Emits a variable number of arguments in sequence and then completes.</p>
+        <pre>{{ ofOutput | json }}</pre>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <h2><code>from()</code></h2>
+        <p>Converts various other objects and data types into Observables.</p>
+        <pre>{{ fromOutput | json }}</pre>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <h2><code>map()</code></h2>
+        <p>Applies a given project function to each value emitted by the source Observable, and emits the resulting values as an Observable.</p>
+        <pre>{{ mapOutput | json }}</pre>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <h2><code>filter()</code></h2>
+        <p>Filter items emitted by the source Observable by only emitting those that satisfy a specified predicate.</p>
+        <pre>{{ filterOutput | json }}</pre>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <h2><code>tap()</code></h2>
+        <p>Perform a side effect for every emission on the source Observable, but return an Observable that is identical to the source.</p>
+        <pre>{{ tapOutput | json }}</pre>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <h2><code>take()</code></h2>
+        <p>Emits only the first count values emitted by the source Observable.</p>
+        <pre>{{ takeOutput | json }}</pre>
+      </section>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Higher-Order Mapping Operators -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Higher-Order Mapping Operators</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <section>
+        <h2><code>switchMap()</code></h2>
+        <p>Projects each source value to an Observable which is merged in the output Observable, emitting values only from the most recently projected Observable. Useful for scenarios like typeahead search.</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Search (e.g., "Leanne", "Ervin")</mat-label>
+          <input matInput [formControl]="searchInput" placeholder="Type to search users...">
+        </mat-form-field>
+        <p>Results:</p>
+        <div *ngIf="searchResult$ | async as results">
+          <div *ngIf="results.length === 0 && searchInput.value && searchInput.value.length >= 2">No users found.</div>
+          <ul>
+            <li *ngFor="let user of results">{{ user.name }} ({{ user.username }})</li>
+          </ul>
+        </div>
+        <details>
+          <summary>Raw Output Log (switchMapOutput)</summary>
+          <pre>{{ switchMapOutput | json }}</pre>
+        </details>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <h2><code>concatMap()</code></h2>
+        <p>Projects each source value to an Observable which is merged in the output Observable, in a serialized fashion waiting for each one to complete before merging the next. Maintains order.</p>
+        <pre>{{ concatMapOutput | json }}</pre>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <h2><code>mergeMap()</code> (flatMap)</h2>
+        <p>Projects each source value to an Observable which is merged in the output Observable. All resulting Observables are merged concurrently.</p>
+        <pre>{{ mergeMapOutput | json }}</pre>
+      </section>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Combination Operators -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Combination Operators</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <section>
+        <h2><code>forkJoin()</code></h2>
+        <p>When all input Observables complete, emit an array or a dictionary of the last emitted values from each.</p>
+        <pre>{{ forkJoinOutput | json }}</pre>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <h2><code>combineLatest()</code></h2>
+        <p>When any of the input Observables emits a value, emit the latest value from each Observable as an array.</p>
+        <pre>{{ combineLatestOutput | json }}</pre>
+      </section>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Error Handling -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Error Handling</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <section>
+        <h2><code>catchError()</code></h2>
+        <p>Catches errors on the source Observable and returns a new Observable or throws an error.</p>
+        <pre>{{ errorHandlingOutput | json }}</pre>
+      </section>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Subjects -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Subjects</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <section>
+        <h2><code>Subject</code></h2>
+        <p>A Subject is like an Observable, but can multicast to many Observers. Subjects are like EventEmitters: they maintain a registry of many listeners.</p>
+        <button mat-raised-button color="primary" (click)="emitSubjectValue()">Emit Subject Value</button>
+        <pre>{{ subjectOutput | json }}</pre>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <h2><code>BehaviorSubject</code></h2>
+        <p>A variant of Subject that requires an initial value and emits its current value (or the initial value) to new subscribers.</p>
+        <button mat-raised-button color="primary" (click)="emitBehaviorSubjectValue()">Emit BehaviorSubject Value</button>
+        <pre>{{ behaviorSubjectOutput | json }}</pre>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <h2><code>ReplaySubject</code></h2>
+        <p>A variant of Subject that "replays" old values to new subscribers. It can buffer a set number of values and replay them to any new subscriber.</p>
+        <button mat-raised-button color="primary" (click)="emitReplaySubjectValue()">Emit ReplaySubject Value</button>
+        <pre>{{ replaySubjectOutput | json }}</pre>
+      </section>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Utility Operators -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Utility Operators</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <section>
+        <h2><code>debounceTime()</code></h2>
+        <p>Emits a notification from the source Observable only after a particular time span has passed without another source emission.</p>
+        <p><em>(Demo combined with <code>distinctUntilChanged</code> and <code>switchMap</code> above, and standalone log in console)</em></p>
+        <pre>Debounced Output (see console for more): {{ debounceOutput | json }}</pre>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <h2><code>distinctUntilChanged()</code></h2>
+        <p>Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item.</p>
+        <p><em>(Demo combined with <code>debounceTime</code> and <code>switchMap</code> above, and standalone log in console)</em></p>
+        <pre>Distinct Output (see console for more): {{ distinctUntilChangedOutput | json }}</pre>
+      </section>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Interview Questions -->
+  <mat-card class="interview-questions-card">
+    <mat-card-header>
+      <mat-card-title>RxJS Interview Questions</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <ul>
+        <li><strong>Observable vs. Promise:</strong> What are the main differences between Observables and Promises? When would you use one over the other?</li>
+        <li><strong>Hot vs. Cold Observables:</strong> Explain the concept of Hot and Cold Observables. Provide examples of each.</li>
+        <li><strong>Subjects:</strong> What is a Subject? Describe the different types of Subjects (Subject, BehaviorSubject, ReplaySubject, AsyncSubject) and their use cases.</li>
+        <li><strong>Higher-Order Mapping Operators:</strong> Explain <code>switchMap</code>, <code>concatMap</code>, <code>mergeMap</code>, and <code>exhaustMap</code>. Provide a scenario where each would be the best choice.</li>
+        <li><strong>Error Handling:</strong> How do you handle errors in RxJS streams? Explain operators like <code>catchError</code> and <code>retry</code>.</li>
+        <li><strong>Memory Leaks:</strong> What are common causes of memory leaks when using Observables in Angular? How can you prevent them (e.g., <code>takeUntil</code>, <code>async</code> pipe, manual unsubscription)?</li>
+        <li><strong><code>shareReplay</code> vs. <code>publishReplay</code> + <code>refCount</code>:</strong> What are these operators used for? What are the differences, especially regarding subscription management and re-execution of the source Observable?</li>
+        <li><strong>Marble Diagrams:</strong> Can you explain what a marble diagram is and how it helps in understanding RxJS operators? (Be prepared to draw or interpret one for a given operator).</li>
+        <li><strong>Custom Operators:</strong> How would you create a custom RxJS operator?</li>
+        <li><strong><code>debounceTime</code> vs. <code>throttleTime</code>:</strong> Explain the difference and provide use cases for each.</li>
+        <li><strong>Schedulers:</strong> What are Schedulers in RxJS? Why might you need to use them? (e.g., <code>observeOn</code>, <code>subscribeOn</code>).</li>
+        <li><strong>Multicasting:</strong> Explain the concept of multicasting in RxJS. Which operators help with this?</li>
+        <li><strong>Backpressure:</strong> What is backpressure in the context of RxJS? How can it be handled?</li>
+        <li><strong>Practical Scenario:</strong> "Imagine you have a search input. As the user types, you need to make an API call. How would you implement this efficiently using RxJS, considering performance (avoiding excessive API calls) and handling outdated responses?" (This usually leads to discussing <code>debounceTime</code>, <code>distinctUntilChanged</code>, <code>switchMap</code>).</li>
+        <li><strong>Combining Observables:</strong> Discuss different ways to combine multiple Observables (e.g., <code>forkJoin</code>, <code>zip</code>, <code>combineLatest</code>, <code>merge</code>, <code>concat</code>). When would you use each?</li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+
+</div>

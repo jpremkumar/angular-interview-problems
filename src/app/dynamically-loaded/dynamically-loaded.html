@@ -1,0 +1,7 @@
+<p>dynamically-loaded works!</p>
+<div class="dynamically-loaded-content">
+  <h4>I am the Dynamically Loaded Component!</h4>
+  <p><strong>Received Input:</strong> {{ inputData }}</p>
+  <button mat-stroked-button color="accent" (click)="emitEvent()">Emit Event to Parent</button>
+  <p><small>This component was rendered using <code>ViewContainerRef.createComponent()</code>.</small></p>
+</div>

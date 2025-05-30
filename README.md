@@ -1,59 +1,87 @@
-# AngularInterviewProblems
+# Angular Interview Problems
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+This project is designed to help interview candidates with 4-6 years of Angular experience prepare for technical interviews. It includes various problem statements and scenarios focusing on key Angular concepts and best practices.
 
-## Development server
+## Project Goal
 
-To start a local development server, run:
+To provide a hands-on practice environment covering:
 
-```bash
-ng serve
-```
+- Performance Optimization (e.g., `trackBy`, Change Detection strategies)
+- Responsive Design techniques
+- Dynamic Component Rendering
+- Lazy Loading of modules
+- Common Angular Material UI issues (styling, custom validation, accessibility)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Each section includes a practical demonstration and relevant interview questions.
 
-## Code scaffolding
+## Core Technologies
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Angular 18 (using `NgModule`s, not standalone components)
+- Angular CLI
+- Angular Material
+- TypeScript
+- CSS (with Flexbox for responsive layouts)
 
-```bash
-ng generate component component-name
-```
+## Application Structure
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The application is divided into modules and components, each addressing a specific interview topic:
 
-```bash
-ng generate --help
-```
+- **App Shell:** Provides the main navigation using Angular Material tabs.
+- **Performance Optimization:** Demonstrates `trackBy` with `ngFor` and discusses Change Detection.
+  - Route: `/performance`
+  - Component: `PerformanceOptimizationComponent`
+- **Responsive Design:** Shows a responsive card layout using Flexbox and media queries.
+  - Route: `/responsive`
+  - Component: `ResponsiveDesignComponent`
+- **Dynamic Rendering:** Illustrates how to load components dynamically, pass inputs, and handle outputs.
+  - Route: `/dynamic-rendering`
+  - Component: `DynamicRenderingComponent` (hosts `DynamicallyLoadedComponent`)
+- **Lazy Loading:** A dedicated module (`LazyLoadingDemoModule`) loaded on demand.
+  - Route: `/lazy` (loads `LazyLoadingDemoModule` which then routes to `LazyLoadingDemoComponent`)
+  - Component: `LazyLoadingDemoComponent`
+- **Material UI Issues:** Covers common challenges like style overriding and custom form validation with Angular Material components.
+  - Route: `/material-issues`
+  - Component: `MaterialIssuesComponent`
 
-## Building
+## Getting Started
 
-To build the project run:
+1. **Prerequisites:**
+   - Node.js (latest LTS version recommended)
+   - Angular CLI (`npm install -g @angular/cli`)
 
-```bash
-ng build
-```
+2. **Clone the repository (if applicable):**
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+   ```bash
+   git clone <repository-url>
+   cd angular-interview-problems
+   ```
 
-## Running unit tests
+3. **Install dependencies:**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+   ```bash
+   npm install
+   ```
 
-```bash
-ng test
-```
+4. **Run the development server:**
 
-## Running end-to-end tests
+   ```bash
+   ng serve -o
+   ```
 
-For end-to-end (e2e) testing, run:
+   Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-```bash
-ng e2e
-```
+## Build
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Additional Resources
+## Running Unit Tests
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Run `ng test` to execute the unit tests via Karma. (Note: Test specs were skipped for some generated components for brevity in this exercise).
+
+## Further Help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Copilot Instructions
+
+Instructions for GitHub Copilot on how to assist with this project are located in `.github/copilot-instructions.md`.
