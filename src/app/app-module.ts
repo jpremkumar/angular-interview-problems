@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
@@ -20,6 +21,8 @@ import { DynamicRendering } from './dynamic-rendering/dynamic-rendering';
 import { MaterialIssues } from './material-issues/material-issues';
 import { DynamicallyLoaded } from './dynamically-loaded/dynamically-loaded';
 import { RxjsExamples } from './rxjs-examples/rxjs-examples';
+import { TypescriptConcepts } from './typescript-concepts/typescript-concepts';
+import { OopConceptsComponent } from './oop-concepts/oop-concepts';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { RxjsExamples } from './rxjs-examples/rxjs-examples';
     DynamicRendering,
     MaterialIssues,
     DynamicallyLoaded,
-    RxjsExamples
+    RxjsExamples,
+    TypescriptConcepts,
+    OopConceptsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ import { RxjsExamples } from './rxjs-examples/rxjs-examples';
     MatFormFieldModule,
     MatSelectModule,
     MatTooltipModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

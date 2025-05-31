@@ -1,0 +1,228 @@
+<mat-card class="oop-questions-card">
+  <mat-card-header>
+    <mat-card-title>Object-Oriented Programming (OOP) Concepts - Interview Questions & Examples</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      These questions are generally applicable to OOP principles, often discussed in the context of languages like TypeScript, Java, C#, Python, etc. In an Angular/TypeScript interview, expect to relate these to how TypeScript implements or supports these concepts.
+    </p>
+
+    <mat-accordion multi="true">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Core OOP Pillars</strong>
+          </mat-panel-title>
+          <mat-panel-description>
+            Encapsulation, Abstraction, Inheritance, Polymorphism
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>What are the four main pillars of Object-Oriented Programming? Briefly describe each.</p>
+        <ul>
+          <li><strong>Encapsulation:</strong> Bundling data (attributes) and methods that operate on the data within a single unit (class). Restricts direct access to some of an object's components.</li>
+          <li><strong>Abstraction:</strong> Hiding complex implementation details and showing only essential features of the object.</li>
+          <li><strong>Inheritance:</strong> Mechanism where a new class (subclass/derived class) inherits properties and methods from an existing class (superclass/base class).</li>
+          <li><strong>Polymorphism:</strong> Ability of an object to take on many forms. Commonly, "one interface, multiple functions" (e.g., method overriding).
+          </li>
+        </ul>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Encapsulation</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Explain encapsulation. How is it achieved in TypeScript/JavaScript? What are access modifiers (e.g., `public`, `private`, `protected` in TypeScript)?</p>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-typescript">{{ encapsulationExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Abstraction</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Explain abstraction. How does it differ from encapsulation? Provide an example of abstraction in software design.</p>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-typescript">{{ abstractionExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Inheritance</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What is inheritance? Explain single vs. multiple inheritance. How is inheritance implemented in TypeScript? What are some advantages and disadvantages?</p>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-typescript">{{ inheritanceExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Polymorphism</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Explain polymorphism. What are the different types (e.g., static/overloading, dynamic/overriding)? Provide an example of method overriding.</p>
+        <p><strong>Example (Method Overriding):</strong></p>
+        <pre><code class="language-typescript">{{ polymorphismExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Class vs. Object</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What is the difference between a class and an object?</p>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-typescript">{{ classObjectExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Constructor</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What is a constructor? What is its purpose? Can a class have multiple constructors (in TypeScript vs. other languages)?</p>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-typescript">{{ constructorExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>`this` Keyword</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Explain the `this` keyword and how its value is determined in different contexts (especially in JavaScript/TypeScript).</p>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-typescript">{{ thisKeywordExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Method Overloading vs. Method Overriding</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Explain the difference. Does TypeScript directly support method overloading like Java/C#? How can similar functionality be achieved?</p>
+        <p><i>(Method Overriding example is covered under Polymorphism)</i></p>
+        <p>TypeScript does not support traditional method overloading (multiple methods with the same name but different parameter types/counts in the same class). However, you can achieve similar results using optional parameters, default parameters, rest parameters, or by checking parameter types at runtime.</p>
+        <p><strong>Example (Overriding):</strong></p>
+        <pre><code class="language-typescript">{{ methodOverridingExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Abstract Class vs. Interface</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What is an abstract class? What is an interface? When to use one over the other in TypeScript?</p>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-typescript">{{ abstractInterfaceExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Composition over Inheritance</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Explain the principle. Why is it often preferred? Provide an example.</p>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-typescript">{{ compositionExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>SOLID Principles</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Can you name and briefly explain the SOLID principles?</p>
+        <ul>
+          <li><strong>S</strong> - Single Responsibility Principle (SRP): A class should have only one reason to change.</li>
+          <li><strong>O</strong> - Open/Closed Principle (OCP): Software entities (classes, modules, functions) should be open for extension but closed for modification.</li>
+          <li><strong>L</strong> - Liskov Substitution Principle (LSP): Subtypes must be substitutable for their base types.</li>
+          <li><strong>I</strong> - Interface Segregation Principle (ISP): Clients should not be forced to depend on interfaces they do not use.</li>
+          <li><strong>D</strong> - Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details. Details should depend on abstractions.</li>
+        </ul>
+        <p><em>(Code examples for SOLID are extensive and best explored in dedicated resources.)</em></p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Coupling and Cohesion</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What do coupling and cohesion mean? Is high or low coupling/cohesion generally preferred, and why?</p>
+        <ul>
+          <li><strong>Coupling:</strong> The degree of interdependence between software modules. Low coupling is preferred.</li>
+          <li><strong>Cohesion:</strong> The degree to which the elements inside a module belong together. High cohesion is preferred.</li>
+        </ul>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Static Members</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What are static methods and static properties? When are they useful? How are they accessed?</p>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-typescript">{{ staticMembersExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Method Chaining</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What is method chaining? How can it be implemented?</p>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-typescript">{{ methodChainingExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Design Patterns (Singleton Example)</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Are you familiar with common OOP design patterns? Briefly explain one (e.g., Singleton).</p>
+        <p><strong>Example (Singleton):</strong></p>
+        <pre><code class="language-typescript">{{ singletonExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>OOP in JavaScript/TypeScript</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>How does JavaScript (ES6+) support OOP concepts? How does TypeScript enhance this?</p>
+        <p>JS (ES6+) provides classes, inheritance (`extends`), constructors. TypeScript adds static typing, interfaces, access modifiers (`public`, `private`, `protected`), abstract classes, generics, enums, etc., making OOP more robust.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>Real-world Example Discussion</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Describe how you might model a real-world system (e.g., a library, an e-commerce platform, a game) using OOP principles. Identify some key classes, their properties, methods, and relationships.</p>
+        <p><i>(This is a discussion question. Be prepared to talk through a system design.)</i></p>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+  </mat-card-content>
+</mat-card>

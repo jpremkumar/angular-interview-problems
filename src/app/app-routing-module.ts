@@ -5,6 +5,8 @@ import { ResponsiveDesign } from './responsive-design/responsive-design'; // Cor
 import { DynamicRendering } from './dynamic-rendering/dynamic-rendering'; // Corrected: DynamicRendering
 import { MaterialIssues } from './material-issues/material-issues'; // Corrected: MaterialIssues
 import { RxjsExamples } from './rxjs-examples/rxjs-examples'; // Corrected: RxjsExamples
+import { TypescriptConcepts } from './typescript-concepts/typescript-concepts';
+import { OopConcepts } from './oop-concepts/oop-concepts';
 
 const routes: Routes = [
   { path: 'performance', component: PerformanceOptimization },
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'dynamic-rendering', component: DynamicRendering },
   { path: 'material-issues', component: MaterialIssues },
   { path: 'rxjs-examples', component: RxjsExamples },
+  { path: 'typescript-concepts', component: TypescriptConcepts },
+  { path: 'oop-concepts', component: OopConcepts },
   // {
   //   path: 'lazy',
   //   loadChildren: () =>

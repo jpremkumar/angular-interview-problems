@@ -1,0 +1,192 @@
+<mat-card class="typescript-questions-card">
+  <mat-card-header>
+    <mat-card-title>TypeScript Core Concepts - Interview Questions & Examples</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-accordion multi="true">
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Static vs. Dynamic Typing</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What is TypeScript, and how does it differ from JavaScript? Explain the benefits of static typing.</p>
+        <p><em>TypeScript is a superset of JavaScript that adds optional static typing. Benefits: early error detection, improved code readability and maintainability, better tooling (autocompletion, refactoring).</em></p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Basic Types</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Describe the basic types available in TypeScript. When would you use `any` vs. `unknown`?</p>
+        <p><em>Types: `number`, `string`, `boolean`, `array` (e.g., `number[]` or `Array<number>`), `tuple` (e.g., `[string, number]`), `enum`, `any`, `void`, `null`, `undefined`, `never`, `unknown`, `object`.</em></p>
+        <p><em>Use `unknown` when the type is not known beforehand but you want to perform type checks before operating on the value. `any` opts out of type checking.</em></p>
+        <pre><code class="language-typescript">{{ basicTypesExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Interfaces vs. Types</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What are interfaces? What are type aliases (`type`)? How do they differ, and when to prefer one?</p>
+        <p><em>Interfaces: Define contracts for object shapes. Type aliases: Give a name to any type. Interfaces support declaration merging; types don't. Types can represent unions, intersections, primitives more easily.</em></p>
+        <pre><code class="language-typescript">{{ interfacesTypesExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Enums</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What are enums? Explain numeric, string, and const enums.</p>
+        <p><em>Enums allow defining a set of named constants. Numeric enums assign auto-incrementing numbers. String enums assign string values. Const enums are inlined at compile time for performance.</em></p>
+        <pre><code class="language-typescript">{{ enumsExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Generics</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Explain generics. How do they help in writing reusable and type-safe code?</p>
+        <p><em>Generics allow writing code that can work over a variety of types rather than a single one, while maintaining type safety.</em></p>
+        <pre><code class="language-typescript">{{ genericsExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Union Types & Intersection Types</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What are union types (`|`) and intersection types (`&`)?</p>
+        <p><em>Union types allow a variable to be one of several types. Intersection types combine multiple types into one.</em></p>
+        <pre><code class="language-typescript">{{ unionIntersectionExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Type Guards & Type Narrowing</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What are type guards? How can you narrow down types?</p>
+        <p><em>Type guards are expressions that perform a runtime check that guarantees the type in some scope. Narrowing is done using `typeof`, `instanceof`, `in`, or custom type guard functions.</em></p>
+        <pre><code class="language-typescript">{{ typeGuardsExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>`keyof` and Lookup Types</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Explain `keyof` and lookup types (e.g., `T[K]`).</p>
+        <p><em>`keyof T` yields a union of known public property names of `T`. `T[K]` (lookup type) gets the type of property `K` in `T`.</em></p>
+        <pre><code class="language-typescript">{{ keyofLookupExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Mapped Types</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What are mapped types? (e.g., `Partial<T>`, `Readonly<T>`).</p>
+        <p><em>Mapped types create new types by transforming properties of an existing type.</em></p>
+        <pre><code class="language-typescript">{{ mappedTypesExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Conditional Types</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Explain conditional types (e.g., `T extends U ? X : Y`). How can they be used with `infer`?</p>
+        <p><em>Conditional types select one of two possible types based on a condition. `infer` allows declaring a type variable to be inferred within the true branch of a conditional type.</em></p>
+        <pre><code class="language-typescript">{{ conditionalTypesExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Decorators</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What are decorators? (Note: Experimental feature).</p>
+        <p><em>Decorators are special kinds of declarations that can be attached to classes, methods, accessors, properties, or parameters to modify their behavior.</em></p>
+        <pre><code class="language-typescript">{{ decoratorsExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Modules</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>How does TypeScript handle modules? Explain `import` and `export`.</p>
+        <p><em>TypeScript uses ES Modules syntax (`import`/`export`) for organizing code into reusable pieces.</em></p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>`tsconfig.json`</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What is `tsconfig.json`? Explain common compiler options.</p>
+        <p><em>`tsconfig.json` specifies root files and compiler options for a TypeScript project. Common options: `target`, `module`, `strict`, `outDir`, `esModuleInterop`.</em></p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Declaration Files (`.d.ts`)</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What are declaration files? Why are they needed?</p>
+        <p><em>`.d.ts` files provide type information for JavaScript libraries that were not written in TypeScript.</em></p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Utility Types</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Describe some built-in utility types (e.g., `Partial<T>`, `Pick<T, K>`).</p>
+        <pre><code class="language-typescript">{{ utilityTypesExample }}</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>`never` vs. `void`</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Difference between `never` and `void`?</p>
+        <p><em>`void` is the absence of a return value (e.g., a function that doesn't return anything). `never` represents a value that will never occur (e.g., a function that always throws an error or has an infinite loop).</em></p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Type Assertions</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>What are type assertions (`as` keyword or angle-bracket)? Risks?</p>
+        <p><em>Type assertions tell the compiler to treat a value as a specific type. Risks: Can lead to runtime errors if the assertion is incorrect.</em></p>
+        <pre><code class="language-typescript">// Example
+let someValue: unknown = "this is a string";
+let strLength: number = (someValue as string).length;
+let strLengthAngle: number = (&lt;string&gt;someValue).length;</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Literal Types</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Explain literal types.</p>
+        <p><em>Literal types allow specifying exact values a string, number, or boolean must have.</em></p>
+        <pre><code class="language-typescript">type CardinalDirection = "North" | "East" | "South" | "West";
+let myDirection: CardinalDirection = "North";
+// myDirection = "N"; // Error</code></pre>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong>Optional Chaining (`?.`) & Nullish Coalescing (`??`)</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Explain these features.</p>
+        <p><em>Optional Chaining (`?.`): Accesses properties of an object that may be `null` or `undefined` without causing an error. Nullish Coalescing (`??`): Provides a default value if an expression is `null` or `undefined`.</em></p>
+        <pre><code class="language-typescript">
+interface UserProfile {
+  id: number;
+  details?: {
+    name?: string;
+    age?: number;
+  };
+}
+const user: UserProfile = { id: 1 };
+const userName = user.details?.name; // undefined, no error
+const userAge = user.details?.age ?? 30; // 30 (if age is null/undefined)
+        </code></pre>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+  </mat-card-content>
+</mat-card>
